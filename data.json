@@ -1,0 +1,302 @@
+[
+    {
+        "gambar": "menu1.jpg",
+        "namaProduk": "Stracciatella",
+        "keterangan": "tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.",
+        "harga": "<span class='small'>Rp.</span> 500.000",
+        "bintang": 4,
+        "detail": [
+            {
+                "linkMap": "",
+                "telepon": "",
+                "linkWebsite": "",
+                "sosmedTempat": ""
+            }
+        ]
+    },
+    {
+        "gambar": "menu2.jpg",
+        "namaProduk": "Bakso",
+        "keterangan": "tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 3,
+        "detail": [
+            {
+                "linkMap": "",
+                "telepon": "",
+                "linkWebsite": "",
+                "sosmedTempat": ""
+            }
+        ]
+    },
+    {
+        "gambar": "menu3.jpg",
+        "namaProduk": "Gado Gado",
+        "keterangan": "tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 2,
+        "detail": [
+            {
+                "linkMap": "",
+                "telepon": "",
+                "linkWebsite": "",
+                "sosmedTempat": ""
+            }
+        ]
+    },
+    {
+        "gambar": "menu4.jpg",
+        "namaProduk": "Gado Gado",
+        "keterangan": "tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 5,
+        "detail": [
+            {
+                "linkMap": "",
+                "telepon": "",
+                "linkWebsite": "",
+                "sosmedTempat": ""
+            }
+        ]
+    },
+    {
+        "gambar": "menu4.jpg",
+        "namaProduk": "Nasi Pindang Kudus & Soto Sapi Gajahmada - Semarang",
+        "keterangan": "Nasi Pdang Kudus dengan tambahan Menu Soto Sapi Gajahmada",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 4,
+        "detail": [
+            {
+                "alamat": "Jl. MH Thamrin No.40, Sekayu, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50132",
+                "linkMap": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15840.992885764264!2d110.4173189!3d-6.9800101!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b546fb246ff%3A0x2181256c577f9cb1!2sNasi%20Pindang%20Kudus%20%26%20Soto%20Sapi%20Gajahmada%20-%20Semarang!5e0!3m2!1sid!2sid!4v1699279952269!5m2!1sid!2sid",
+                "telepon": "0819-1448-3058",
+                "linkWebsite": "",
+                "sosmedTempat": ""
+            }
+        ]
+    },
+    {
+        "gambar": "",
+        "namaProduk": "Mie Kopyok Pak Dhuwur",
+        "keterangan": "Mie kopyok lezat",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 4,
+        "detail": {
+            "alamat": "Jl. Tanjung No.18A, Pandansari, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50132",
+            "linkMap": "",
+            "telepon": "0856-4137-2758",
+            "linkWebsite": "",
+            "sosmedTempat": ""
+        }
+    },
+    {
+        "gambar": "",
+        "namaProduk": "Mie Gacoan Veteran",
+        "keterangan": "",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 4.6,
+        "detail": {
+            "alamat": "Jl. Veteran, Lempongsari, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50231",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosmedTempat": ""
+        }
+    },
+    {
+        "gambar": "",
+        "namaProduk": "AYAM BAKAR SEMARANG",
+        "keterangan": "",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 4.6,
+        "detail": {
+            "alamat": "Jl. MH Thamrin No.84, Miroto, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50132",
+            "linkMap": "",
+            "telepon": "0857-1595-2124",
+            "linkWebsite": "",
+            "sosmedTempat": ""
+        }
+    },
+    {
+        "gambar": "",
+        "namaProduk": "Nasi Goreng & Gongso Babat Pak Karmin",
+        "keterangan": "",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 4.4,
+        "detail": {
+            "alamat": "Jl. Hasanudin (Depan Benglap TNI), Semarang Utara, Semarang.",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosmedTempat": ""
+        }
+    },
+    {
+        "gambar": "",
+        "namaProduk": "Kedai Cempluk (Special Sate & Tongseng)",
+        "keterangan": "",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 5.0,
+        "detail": {
+            "alamat": "Jl. Supriyadi No.22a, Kalicari, Kec. Pedurungan, Kota Semarang, Jawa Tengah 50198",
+            "linkMap": "",
+            "telepon": "0857-9992-4271",
+            "linkWebsite": "",
+            "sosmedTempat": ""
+        }
+    },
+    {
+        "gambar": "",
+        "namaProduk": "Soto Bangkong",
+        "keterangan": "",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 4.3,
+        "detail": {
+            "alamat": "Ruko Bangkong Plaza, Jl. Brigjen Katamso No.1, Peterongan, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50242",
+            "linkMap": "",
+            "telepon": "(024) 8412842",
+            "linkWebsite": "",
+            "sosmedTempat": ""
+        }
+    },
+    {
+        "gambar": "",
+        "namaProduk": "Tahu Gimbal",
+        "keterangan": "",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 4.6,
+        "detail": {
+            "alamat": "Jl. Simongan, Ngemplak Simongan",
+            "linkMap": "",
+            "telepon": "0878 6549 5915",
+            "linkWebsite": "",
+            "sosmedTempat": ""
+        }
+    },
+    {
+        "gambar": "",
+        "namaProduk": "Lumpia",
+        "keterangan": "",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 4.5,
+        "detail": {
+            "alamat": "Gang Grajen Jl. Pemuda No.1, Pandansari",
+            "linkMap": "",
+            "telepon": "0816 664 952",
+            "linkWebsite": "",
+            "sosmedTempat": ""
+        }
+    },
+    {
+        "gambar": "",
+        "namaProduk": "Pempek",
+        "keterangan": "",
+        "harga": "<span class'='small'>Rp.</span> 50.000",
+        "bintang": 4.5,
+        "detail": {
+            "alamat": "Jl. Pemuda No.150, Sekayu",
+            "linkMap": "",
+            "telepon": "(024) 86578057",
+            "linkWebsite": "",
+            "sosmedTempat": ""
+        }
+    },
+    {
+        "gambar": "",
+        "namaProduk": "Nasi Koyor",
+        "keterangan": "",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 4.4,
+        "detail": {
+            "alamat": "Jl. Suyudono No.51A, Bulustalan",
+            "linkMap": "",
+            "telepon": "085728820421",
+            "linkWebsite": "",
+            "sosmedTempat": ""
+        }
+    },
+    {
+        "gambar": "",
+        "namaProduk": "Nasi Ayam",
+        "keterangan": "",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 4.6,
+        "detail": {
+            "alamat": "Jl. Melati Selatan, Brumbungan",
+            "linkMap": "",
+            "telepon": "(024) 3548306",
+            "linkWebsite": "",
+            "sosmedTempat": ""
+        }
+    },
+    {
+        "gambar": "",
+        "namaProduk": "Dimsum",
+        "keterangan": "",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 4.5,
+        "detail": {
+            "alamat": "Jl. Kh Ahmad Dahlan No.2, Pekunden",
+            "linkMap": "",
+            "telepon": "(024) 8450045",
+            "linkWebsite": "",
+            "sosmedTempat": ""
+        }
+    },
+    {
+        "gambar": "",
+        "namaProduk": "Gulai Kambing",
+        "keterangan": "Gulai Kambing Bustaman Pak Sabar",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 4.4,
+        "detail": {
+            "alamat": "Tj. Mas",
+            "linkMap": "",
+            "telepon": "0822 2095 4443",
+            "linkWebsite": "",
+            "sosmedTempat": ""
+        }
+    },
+    {
+        "gambar": "",
+        "namaProduk": "Tahu Pong Gajah Mada Semarang",
+        "keterangan": "Enak banget Gurih",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 4.2,
+        "detail": {
+            "alamat": "Jl. Gajahmada No.63B, Kembangsari, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50133",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosmedTempat": ""
+        }
+    },
+    {
+        "gambar": "",
+        "namaProduk": "Waroeng Kaligarong",
+        "keterangan": "Enak gurih",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 4.5,
+        "detail": {
+            "alamat": "Jl. Mayor Jend. D.I. Panjaitan No.64, Brumbungan, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50135",
+            "linkMap": "",
+            "telepon": "0877-3134-5445",
+            "linkWebsite": "",
+            "sosmedTempat": ""
+        }
+    },
+    {
+        "gambar": "",
+        "namaProduk": "Warung Makan Asem-Asem Koh Liem",
+        "keterangan": "Asem Asem nya enajk",
+        "harga": "<span class='small'>Rp.</span> 50.000",
+        "bintang": 4.4,
+        "detail": {
+            "alamat": "Jl. Karang Anyar No.28, Gabahan, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50135",
+            "linkMap": "",
+            "telepon": "(024) 3565628",
+            "linkWebsite": "",
+            "sosmedTempat": ""
+        }
+    }
+]
