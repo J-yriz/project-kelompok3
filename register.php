@@ -7,41 +7,46 @@ $email = $password = $repeat = "";
 $email_err = $password_err = $repeat_err = "";
  
 // Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     // Validate email
-        if(empty(trim($_POST["email"]))){
-            $email_err = "Tolong masukan email.";
-        } else{
-            // Prepare a select statement
-            $sql = "SELECT email FROM users WHERE email = ?";
-            
-            if($stmt = mysqli_prepare($link, $sql)){
-                // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "s", $param_email);
-                
-                // Set parameters
-                $param_email = trim($_POST["email"]);
-                
+    if (empty(trim($_POST["email"]))) {
+        $email_err = "Tolong masukan email.";
+    } else {
+        // Prepare a select statement
+        $sql = "SELECT email FROM users WHERE email = ?";
+
+        if ($stmt = mysqli_prepare($link, $sql)) {
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_email);
+
+            // Set parameters
+            $param_email = trim($_POST["email"]);
+
+            // Check if email contains "@gmail.com"
+            if (strpos($param_email, "@gmail.com") === false) {
+                $email_err = "Email harus mengandung '@gmail.com'.";
+            } else {
                 // Attempt to execute the prepared statement
-                if(mysqli_stmt_execute($stmt)){
+                if (mysqli_stmt_execute($stmt)) {
                     /* store result */
                     mysqli_stmt_store_result($stmt);
-                    
-                    if(mysqli_stmt_num_rows($stmt) == 1){
+
+                    if (mysqli_stmt_num_rows($stmt) == 1) {
                         $email_err = "Email ini sudah pernah terdaftar.";
-                    } else{
+                    } else {
                         $email = trim($_POST["email"]);
                     }
-                } else{
+                } else {
                     echo "Terjadi kesalahan!, Silahkan coba lagi.";
                 }
             }
         }
-    
+
         // Close statement
         mysqli_stmt_close($stmt);
     }
+}
     
     // Validate password
     if(isset($_POST["password"])) {
@@ -133,7 +138,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <div class="flex items-start mb-6">
                         <label for="terms" class="text-sm font-medium text-white dark:text-white">Sudah punya akun? <a href="./index.php" class="text-biruMiaw hover:underline dark:text-biruMiaw">Login</a></label>
                     </div>
-                    <button type="submit" value="Submit" class="text-black bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-biruMiaw dark:hover:bg-blue-300 dark:focus:ring-blue-800">Register new account</button>
+                    <button type="submit" value="Submit" class="text-black bg-blue-700 hover:bg-blue-800 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-biruMiaw dark:hover:bg-blue-300">Register new account</button>
                 </form>
             </div>
         </main>
