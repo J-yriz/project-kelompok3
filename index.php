@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body class="bg-gray-800">
     
-    <div class="container bg-gray-800">
+    <div class="container bg-gray-800 font-rubik">
         <main>
             <div class="login max-w-md mx-auto mt-52 p-5 bg-slate-900 rounded-lg">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">

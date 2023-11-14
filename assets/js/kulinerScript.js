@@ -51,7 +51,7 @@ xhttp.onreadystatechange = function () {
 
         function displayShortMenu() {
             let card = '';
-            data.slice(0, 3).map((e) => {
+            data.slice(0, 3).forEach((e) => {
                 card += isiHtmlCards(e);
             });
             productContainer.innerHTML = card;
@@ -60,7 +60,7 @@ xhttp.onreadystatechange = function () {
 
         function displayFullMenu() {
             let card = '';
-            data.map((e) => {
+            data.forEach((e) => {
                 if (e.namaProduk.length > 12) {
                     e.namaProduk = e.namaProduk.slice(0, 12) + '..';
                 }
@@ -151,7 +151,7 @@ xhttp.send();
 
 function isiHtmlCards(e) {
     let starIcons = Array.from({ length: e.bintang }, () => '<ion-icon name="star"></ion-icon>').join('');
-    return `<a class="kartuProduk" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal">
+    return `<a class="kartuProduk" onclick="console.log('ea');" data-modal-target="modalDetailMakanan" data-modal-toggle="modalDetailMakanan">
                 <div class="product-card">
                 <div class="img-box">
                     <img

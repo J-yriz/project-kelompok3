@@ -153,6 +153,9 @@ html {
   background: #F6F1F1;
 }
 
+body {
+  background: #F6F1F1;
+}
 
 
 
@@ -168,9 +171,9 @@ html {
   transform: translateX(-50%);
   width: 100%;
   padding: 10px 30px;
-  background: hsla(0, 0%, 100%, 0.99);
+  background: hsl(0, 0%, 100%);
   border-bottom: 1px solid hsla(0, 0%, 0%, 0.05);
-  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.05);
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.221);
   z-index: 5;
 }
 
@@ -181,7 +184,7 @@ html {
 }
 
 .navbar-nav {
-  background: hsla(0, 0%, 100%, 0.9);
+  background: hsl(0, 0%, 100%);
   position: absolute;
   top: 60px;
   left: 0;
