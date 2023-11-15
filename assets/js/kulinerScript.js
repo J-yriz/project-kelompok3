@@ -47,42 +47,44 @@ xhttp.onreadystatechange = function () {
         var data = JSON.parse(xhttp.responseText);
         const productContainer = document.querySelector(".product-container");
         const modalContainer = document.querySelector(".modal-container");
+        const aClassStyle = document.getElementsByClassName("kartuProduk");
         const button = document.getElementById("myButton");
         let isFullMenu = true;
 
         function loadData(ea) {
             let card = '';
             data.forEach((e, i) => {
-                if (i < 3 && ea === "Y") {
+                if (i < 3) {
                     if (e.namaProduk.length > 12) {
                         e.namaProduk = e.namaProduk.slice(0, 12) + '..';
                     }
                     e.namaProduk = capitalizeEachWord(e.namaProduk);
                     card += isiHtmlCards(e);
-                } else if(i >= 3 && ea === "Y") {
+                } else{
                     if (e.namaProduk.length > 12) {
                         e.namaProduk = e.namaProduk.slice(0, 12) + '..';
                     }
                     e.namaProduk = capitalizeEachWord(e.namaProduk);
                     card += isiHtmlCards(e, `style="display: none;"`);
-                } else {
-                    if (e.namaProduk.length > 12) {
-                        e.namaProduk = e.namaProduk.slice(0, 12) + '..';
-                    }
-                    e.namaProduk = capitalizeEachWord(e.namaProduk);
-                    card += isiHtmlCards(e);
                 }
             });
-            productContainer.innerHTML = card;
+            return card;
         }
         
+        productContainer.innerHTML = loadData();
+
         function displayShortMenu() {
-            loadData("Y");
+            for (let i = 3; i < aClassStyle.length; i++) {
+                aClassStyle[i].style.display = "none";
+            }
             button.textContent = "Full menu";
         }
         
         function displayFullMenu() {
-            loadData("N");
+            // loadData("N");
+            for (let i = 0; i < aClassStyle.length; i++) {
+                aClassStyle[i].style.display = "block";
+            }
             button.textContent = "Short menu";
         }
 
