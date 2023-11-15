@@ -46,28 +46,43 @@ xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         var data = JSON.parse(xhttp.responseText);
         const productContainer = document.querySelector(".product-container");
+        const modalContainer = document.querySelector(".modal-container");
         const button = document.getElementById("myButton");
         let isFullMenu = true;
 
-        function displayShortMenu() {
+        function loadData(ea) {
             let card = '';
-            data.slice(0, 3).forEach((e) => {
-                card += isiHtmlCards(e);
+            data.forEach((e, i) => {
+                if (i < 3 && ea === "Y") {
+                    if (e.namaProduk.length > 12) {
+                        e.namaProduk = e.namaProduk.slice(0, 12) + '..';
+                    }
+                    e.namaProduk = capitalizeEachWord(e.namaProduk);
+                    card += isiHtmlCards(e);
+                } else if(i >= 3 && ea === "Y") {
+                    if (e.namaProduk.length > 12) {
+                        e.namaProduk = e.namaProduk.slice(0, 12) + '..';
+                    }
+                    e.namaProduk = capitalizeEachWord(e.namaProduk);
+                    card += isiHtmlCards(e, `style="display: none;"`);
+                } else {
+                    if (e.namaProduk.length > 12) {
+                        e.namaProduk = e.namaProduk.slice(0, 12) + '..';
+                    }
+                    e.namaProduk = capitalizeEachWord(e.namaProduk);
+                    card += isiHtmlCards(e);
+                }
             });
             productContainer.innerHTML = card;
+        }
+        
+        function displayShortMenu() {
+            loadData("Y");
             button.textContent = "Full menu";
         }
-
+        
         function displayFullMenu() {
-            let card = '';
-            data.forEach((e) => {
-                if (e.namaProduk.length > 12) {
-                    e.namaProduk = e.namaProduk.slice(0, 12) + '..';
-                }
-                e.namaProduk = capitalizeEachWord(e.namaProduk);
-                card += isiHtmlCards(e);
-            });
-            productContainer.innerHTML = card;
+            loadData("N");
             button.textContent = "Short menu";
         }
 
@@ -149,9 +164,9 @@ xhttp.onreadystatechange = function () {
 xhttp.open("GET", "data.json", true);
 xhttp.send();
 
-function isiHtmlCards(e) {
+function isiHtmlCards(e, s) {
     let starIcons = Array.from({ length: e.bintang }, () => '<ion-icon name="star"></ion-icon>').join('');
-    return `<a class="kartuProduk" onclick="console.log('ea');" data-modal-target="modalDetailMakanan" data-modal-toggle="modalDetailMakanan">
+    return `<a class="kartuProduk" ${s} onclick="console.log('ea');" data-modal-target="modalDetailMakanan" data-modal-toggle="modalDetailMakanan">
                 <div class="product-card">
                 <div class="img-box">
                     <img
