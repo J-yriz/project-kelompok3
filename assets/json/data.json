@@ -1,0 +1,409 @@
+[
+    {
+        "id": 904595,
+        "gambar": "menu1.jpg",
+        "namaProduk": "Stracciatella",
+        "keterangan": "tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.",
+        "harga": "500000",
+        "bintang": 4,
+        "detail": {
+            "alamat": "Jl. Mayor Jend. D.I.Panjaitan No.64, Brumbungan, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50135",
+            "linkMap": "https:\/\/www.google.com\/maps\/embed?pb=!1m14!1m8!1m3!1d15840.992885764264!2d110.4173189!3d-6.9800101!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b546fb246ff%3A0x2181256c577f9cb1!2sNasi%20Pindang%20Kudus%20%26%20Soto%20Sapi%20Gajahmada%20-%20Semarang!5e0!3m2!1sid!2sid!4v1699279952269!5m2!1sid!2sid",
+            "telepon": "081234567891",
+            "linkWebsite": "https:\/\/youtube.com\/",
+            "sosialMedia": "https:\/\/instagram.com\/",
+            "menu1": "Bakso Urat",
+            "menu2": "Bakso Kikil",
+            "menu3": "Bakso Udang",
+            "harga1": "50000",
+            "harga2": "30000",
+            "harga3": "40000"
+        }
+    },
+    {
+        "id": 471452,
+        "gambar": "menu2.jpg",
+        "namaProduk": "Bakso",
+        "keterangan": "tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.",
+        "harga": "50000",
+        "bintang": 3,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 551217,
+        "gambar": "menu3.jpg",
+        "namaProduk": "Gado Gado",
+        "keterangan": "tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.",
+        "harga": "50000",
+        "bintang": 2,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 796605,
+        "gambar": "menu4.jpg",
+        "namaProduk": "Gado Gado",
+        "keterangan": "tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.",
+        "harga": "50000",
+        "bintang": 5,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 252849,
+        "gambar": "menu4.jpg",
+        "namaProduk": "Nasi Pindang Kudus & Soto Sapi Gajahmada - Semarang",
+        "keterangan": "Nasi Pdang Kudus dengan tambahan Menu Soto Sapi Gajahmada",
+        "harga": "50000",
+        "bintang": 4,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 666008,
+        "gambar": "",
+        "namaProduk": "Mie Kopyok Pak Dhuwur",
+        "keterangan": "Mie kopyok lezat",
+        "harga": "50000",
+        "bintang": 4,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 427813,
+        "gambar": "",
+        "namaProduk": "Mie Gacoan Veteran",
+        "keterangan": "",
+        "harga": "50000",
+        "bintang": 4.6,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 717038,
+        "gambar": "",
+        "namaProduk": "AYAM BAKAR SEMARANG",
+        "keterangan": "",
+        "harga": "50000",
+        "bintang": 4.6,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 489390,
+        "gambar": "",
+        "namaProduk": "Nasi Goreng & Gongso Babat Pak Karmin",
+        "keterangan": "",
+        "harga": "50000",
+        "bintang": 4.4,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 843078,
+        "gambar": "",
+        "namaProduk": "Kedai Cempluk (Special Sate & Tongseng)",
+        "keterangan": "",
+        "harga": "50000",
+        "bintang": 5,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 634864,
+        "gambar": "",
+        "namaProduk": "Tahu Gimbal",
+        "keterangan": "",
+        "harga": "50000",
+        "bintang": 4.6,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 119751,
+        "gambar": "",
+        "namaProduk": "Lumpia",
+        "keterangan": "",
+        "harga": "50000",
+        "bintang": 4.5,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 228999,
+        "gambar": "",
+        "namaProduk": "Pempek",
+        "keterangan": "",
+        "harga": "50000",
+        "bintang": 4.5,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 515462,
+        "gambar": "",
+        "namaProduk": "Nasi Koyor",
+        "keterangan": "",
+        "harga": "50000",
+        "bintang": 4.4,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 667726,
+        "gambar": "",
+        "namaProduk": "Nasi Ayam",
+        "keterangan": "",
+        "harga": "50000",
+        "bintang": 4.6,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 311881,
+        "gambar": "",
+        "namaProduk": "Dimsum",
+        "keterangan": "",
+        "harga": "50000",
+        "bintang": 4.5,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 955729,
+        "gambar": "",
+        "namaProduk": "Gulai Kambing",
+        "keterangan": "Gulai Kambing Bustaman Pak Sabar",
+        "harga": "50000",
+        "bintang": 4.4,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 553224,
+        "gambar": "",
+        "namaProduk": "Tahu Pong Gajah Mada Semarang",
+        "keterangan": "Enak banget Gurih",
+        "harga": "50000",
+        "bintang": 4.2,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 896078,
+        "gambar": "",
+        "namaProduk": "Waroeng Kaligarong",
+        "keterangan": "Enak gurih",
+        "harga": "50000",
+        "bintang": 4.5,
+        "detail": {
+            "alamat": "",
+            "linkMap": "",
+            "telepon": "",
+            "linkWebsite": "",
+            "sosialMedia": "",
+            "menu1": "",
+            "menu2": "",
+            "menu3": "",
+            "harga1": "",
+            "harga2": "",
+            "harga3": ""
+        }
+    },
+    {
+        "id": 835822,
+        "gambar": "",
+        "namaProduk": "Warung Makan Asem-Asem Koh Liem",
+        "keterangan": "Asem Asem nya enajk",
+        "harga": "50000",
+        "bintang": 4.4
+    }
+]
