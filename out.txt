@@ -1,2 +1,51 @@
-                            <button type="submit"
-                                class="text-black bg-biruMiaw hover:bg-blue-300 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-biruMiaw dark:hover:bg-blue-300">Tambah</button>
+                            <div class="flex items-center">
+                                <div class="w-full">
+                                    <label for="hargaMenu" class="block mb-2 text-sm font-medium text-putihMiaw">Harga Menu Utama</label>
+                                    <input type="text" id="hargaMenu" name="hargaMenu" class="bg-gray-600 text-putihMiaw text-sm rounded-lg focus:ring-gray-600 focus:border-gray-600 block w-full pl-2.5" required>
+                                </div>
+                                <select id="rating" class="bg-gray-600 border border-blue-300 text-putihMiaw text-sm rounded-lg block p-2 ml-4 mt-7 focus:ring-gray-600 focus:border-gray-600">
+                                    <option selected>Select food Rating</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+
+
+                            <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'] ?? '';
+    $email = $_POST['email'] ?? '';
+
+    $data = [
+        'name' => $name,
+        'email' => $email,
+    ];
+
+    $json = json_encode($data);
+
+    // Simpan ke file JSON
+    $file = '../assets/json/test.json';
+    file_put_contents($file, $json);
+
+    echo "Data telah disimpan ke dalam file JSON.";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Input</title>
+</head>
+<body>
+  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <label for="name">Nama:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

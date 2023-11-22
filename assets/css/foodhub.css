@@ -111,7 +111,7 @@ html {
 
 .btn:hover { filter: saturate(1.05) brightness(1.05); }
 
-.btn-primary { background: #86D6F2; }
+.btn-primary { background: #91C8E4; }
 
 .btn-secondary { background: var(--cultured); }
 
@@ -148,7 +148,6 @@ html {
   position: relative;
   max-width: 1440px;
   margin: auto;
-  background: var(--white);
   overflow: hidden;
 }
 
@@ -166,7 +165,7 @@ html {
   transform: translateX(-50%);
   width: 100%;
   padding: 10px 30px;
-  background: hsl(0, 0%, 100%);
+  background: #fffdf0;
   border-bottom: 1px solid hsla(0, 0%, 0%, 0.05);
   box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.221);
   z-index: 5;
@@ -179,7 +178,7 @@ html {
 }
 
 .navbar-nav {
-  background: hsl(0, 0%, 100%);
+  background: #fffdf0;
   position: absolute;
   top: 60px;
   left: 0;
@@ -705,7 +704,6 @@ html {
   justify-content: space-between;
   align-items:     center;
   gap: 15px;
-  background: var(--cultured);
   margin-bottom: 15px;
 }
 
@@ -717,7 +715,6 @@ html {
 }
 
 .product-card .product-price {
-  background: #86D6F2;
   height: 60px;
   width:  130px;
   display:         flex;
@@ -739,7 +736,7 @@ html {
   color: var(--rhythm);
   line-height: 1.6;
   letter-spacing: 0.4px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .product-card .product-rating {

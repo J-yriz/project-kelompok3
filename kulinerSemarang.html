@@ -10,7 +10,7 @@ if (!isset($_SESSION['loggedin'])) {
 ?> -->
 
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -36,12 +36,12 @@ if (!isset($_SESSION['loggedin'])) {
     rel="stylesheet" />
 </head>
 
-<body class="bg-putihMiaw dark:bg-black">
+<body class="bg-putihMiaw dark:bg-hitamMiaw">
   <!--
     - main container
   -->
 
-  <div class="container bg-putihMiaw dark:bg-black font-rubik">
+  <div class="container bg-putihMiaw dark:bg-hitamMiaw font-rubik">
     <!--
       - #HEADER
     -->
@@ -87,54 +87,6 @@ if (!isset($_SESSION['loggedin'])) {
       <div class="cart-box">
         <ul class="cart-box-ul">
           <h4 class="cart-h4">Your order.</h4>
-
-          <li>
-            <a href="#" class="cart-item">
-              <div class="img-box">
-                <img src="./assets/images/menu1.jpg" alt="product image" class="product-img" width="50" height="50"
-                  loading="lazy" />
-              </div>
-
-              <h5 class="product-name">Saumon gravlax</h5>
-              <p class="product-price"><span class="small">$</span>9</p>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="cart-item">
-              <div class="img-box">
-                <img src="./assets/images/menu2.jpg" alt="product image" class="product-img" width="50" height="50"
-                  loading="lazy" />
-              </div>
-
-              <h5 class="product-name">Chevrefried with honey</h5>
-              <p class="product-price"><span class="small">$</span>14</p>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="cart-item">
-              <div class="img-box">
-                <img src="./assets/images/menu3.jpg" alt="product image" class="product-img" width="50" height="50"
-                  loading="lazy" />
-              </div>
-
-              <h5 class="product-name">Crispy fish</h5>
-              <p class="product-price"><span class="small">$</span>4</p>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="cart-item">
-              <div class="img-box">
-                <img src="./assets/images/menu4.jpg" alt="product image" class="product-img" width="50" height="50"
-                  loading="lazy" />
-              </div>
-
-              <h5 class="product-name">Stracciatella</h5>
-              <p class="product-price"><span class="small">$</span>11</p>
-            </a>
-          </li>
 
           <li>
             <a href="#" class="cart-item">
@@ -280,7 +232,7 @@ if (!isset($_SESSION['loggedin'])) {
 
         <form>
           <label for="default-search"
-            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-putihMiaw">Search</label>
           <div class="relative">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -290,29 +242,29 @@ if (!isset($_SESSION['loggedin'])) {
               </svg>
             </div>
             <input type="search" id="default-search"
-              class="mb-2 block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-biruMiaw focus:border-biruMiaw dark:bg-gray-200 dark:border-gray-100 dark:placeholder-gray-400 dark:text-black dark:focus:ring-biruMiaw dark:focus:border-biruMiaw"
-              placeholder="Cari beberapa makanan/minuman kuliner.....">
+              class="mb-2 block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-biruMiaw focus:border-biruMiaw dark:bg-gray-200 dark:border-gray-100 dark:placeholder-gray-400 dark:text-hitamMiaw dark:focus:ring-biruMiaw dark:focus:border-biruMiaw"
+              placeholder="Cari beberapa menu kuliner.....">
             <button type="submit"
-              class="text-black absolute right-2.5 bottom-2.5 bg-biruMiaw hover:bg-blue-300 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-biruMiaw">Search</button>
+              class="text-hitamMiaw absolute right-2.5 bottom-2.5 bg-biruMiaw hover:bg-blue-300 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-biruMiaw">Search</button>
           </div>
           <div class="flex justify-center items-center sm:flex-row sm:justify-end sm:items-end">
             <select id="rating"
-              class="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block p-2.5 dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-400 dark:text-black">
+              class="bg-gray-50 border border-gray-300 text-hitamMiaw text-sm rounded-lg block p-2.5 dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-400 dark:text-hitamMiaw">
               <option selected>Select food Rating</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
-            </select>
+            </select> 
             <!-- Modal toggle -->
             <!-- <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
-              class="ml-3 block text-black bg-biruMiaw hover:bg-blue-300 focus:ring-biruMiaw focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-biruMiaw dark:hover-bg-blue-300"
+              class="ml-3 block text-hitamMiaw bg-biruMiaw hover:bg-blue-300 focus:ring-biruMiaw focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-biruMiaw dark:hover-bg-blue-300"
               type="button">
               Tambah Menu
             </button> -->
-            <a href="./tambahDataMakanan.html"
-              class="ml-3 block text-black bg-biruMiaw hover:bg-blue-300 focus:ring-biruMiaw focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-biruMiaw dark:hover-bg-blue-300">
+            <a href="./tambahDataMenu.html"
+              class="ml-3 block text-hitamMiaw bg-biruMiaw hover:bg-blue-300 focus:ring-biruMiaw focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-biruMiaw dark:hover-bg-blue-300">
               Tambah Menu
             </a>
           </div>
@@ -325,14 +277,16 @@ if (!isset($_SESSION['loggedin'])) {
           Full menu
         </button>
         <!-- Main modal -->
-        <div id="modalDetailMakanan" tabindex="-1" aria-hidden="true"
+        <a type="button" data-modal-hide="modalDetailMakanan">
+          <div id="modalDetailMakanan" tabindex="-1" aria-hidden="true"
           class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
           <div class="relative p-4 w-full max-w-3xl max-h-full">
             <!-- Modal content -->
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 modalContent">
+            <div class="relative bg-biruMiaw1 rounded-lg shadow dark:bg-biruMiaw2 modalContent">
             </div>
           </div>
         </div>
+        </a>
   </div>
 
   </section>

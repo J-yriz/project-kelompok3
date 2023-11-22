@@ -52,7 +52,7 @@ xhttp.onreadystatechange = function () {
         const button = document.getElementById("myButton");
         let isFullMenu = true;
 
-        function loadData(ea) {
+        function loadData() {
             let card = "";
             data.forEach((e, i) => {
                 if (i < 3) {
@@ -82,7 +82,6 @@ xhttp.onreadystatechange = function () {
         }
 
         function displayFullMenu() {
-            // loadData("N");
             for (let i = 0; i < aClassStyle.length; i++) {
                 aClassStyle[i].style.display = "block";
             }
@@ -169,8 +168,8 @@ xhttp.onreadystatechange = function () {
                     if (e.id === dataDetail) {
                         let modalDetailMakanan = `
                         <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                            <p class="text-xl font-semibold text-gray-900 dark:text-white flex items-center">
-                            <a style="margin-right: 5px;" href="${e.detail.linkWebsite}" target="_blank"">${e.namaProduk} |</a>
+                            <p class="text-xl font-semibold text-putihMiaw dark:text-putihMiaw flex items-center">
+                            <a style="margin-right: 5px;" href="${e.detail.linkWebsite}" target="_blank"">${e.namaProduk1} |</a>
                             <span class="small">Rp.</span> ${e.harga.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                             </p>
                         </div>
@@ -180,18 +179,14 @@ xhttp.onreadystatechange = function () {
                             <div class="penjelasanMakanan text-base leading-relaxed text-gray-500 dark:text-gray-400">
                             <div class="keteranganMakanan border p-2 md:p3 md:rounded-md">
                                 <div class="kotakAsikSendiri border-b flex flex-col md:flex-row pb-2">
-                                <p class="mr-4"><span class="font-semibold text-white">Rating Menu</span>${e.bintang}</p>
-                                <p><span class="font-semibold text-white">Keterangan</span>${e.keterangan}</p>
+                                <p class="mr-4"><span class="font-semibold text-putihMiaw">Rating Menu</span>${e.bintang}</p>
+                                <p><span class="font-semibold text-putihMiaw">Keterangan</span>${e.keterangan}</p>
                                 </div>
-                                <p class="border-b pb-2"><span class="font-semibold text-white">Alamat</span>${e.detail.alamat}</p>
-                                <p><span class="font-semibold text-white">Menu lainnya</span>- ${e.detail.menu1} | Rp.${e.detail.harga1.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}<br>- ${e.detail.menu2} | Rp.${e.detail.harga2.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}<br>- ${e.detail.menu3} | Rp.${e.detail.harga3.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</p>
+                                <p class="border-b pb-2"><span class="font-semibold text-putihMiaw">Alamat</span>${e.detail.alamat}</p>
+                                <p><span class="font-semibold text-putihMiaw">Menu lainnya</span>- ${e.detail.menu1} | Rp.${e.detail.harga1.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}<br>- ${e.detail.menu2} | Rp.${e.detail.harga2.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}<br>- ${e.detail.menu3} | Rp.${e.detail.harga3.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</p>
                             </div>
                             </div>
-                        </div>
-                        <iframe
-                            src="${e.detail.linkMap}"
-                            loading="lazy" class="px-4 md:px-5 w-full h-80 md:h-56" frameborder="0">
-                        </iframe>`
+                        </div>`
                         
                         modalContent.innerHTML = modalDetailMakanan;
                     }
@@ -209,33 +204,34 @@ function isiHtmlCards(e, s) {
         { length: e.bintang },
         () => '<ion-icon name="star"></ion-icon>'
     ).join("");
-    return `<a class="kartuProduk" ${s} data-modal-target="modalDetailMakanan" data-modal-toggle="modalDetailMakanan" data-detail=" ${e.id}">
+    return `<a class="kartuProduk shadow-xl rounded-lg" ${s} data-modal-target="modalDetailMakanan" data-modal-toggle="modalDetailMakanan" data-detail=" ${e.id}">
                 <div class="product-card">
-                <div class="img-box">
-                    <img
-                    src="./assets/images/${e.gambar}"
-                    alt="product image"
-                    class="product-img"
-                    width="200"
-                    loading="lazy"
-                    />
-                </div>
-
-                <div class "product-content">
-                    <div class="wrapper">
-                    <h3 class="product-name">${e.namaProduk}</h3>
-
-                    <p class="product-price"><span class='small'>Rp.</span>${e.harga.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</p>
+                    <div class="img-box">
+                        <img
+                        src="./assets/images/${e.gambar}"
+                        alt="product image"
+                        class="product-img"
+                        width="200"
+                        loading="lazy"
+                        />
                     </div>
 
-                    <p class="product-text">
-                    ${e.keterangan}
-                    </p>
+                    <div class "product-content">
+                        <div class="wrapper bg-putihMiaw3">
+                            <h3 class="product-name">${e.namaProduk}</h3>
 
-                    <div class="product-rating">
-                        ${starIcons}
+                            <p class="product-price bg-biruMiaw"><span class='small'>Rp.</span>${e.harga.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</p>
+                            </div>
+
+                            <p class="product-text px-5">
+                            ${e.keterangan}
+                            </p>
+
+                            <div class="product-rating px-5 pb-5">
+                                ${starIcons}
+                            </div>
+                        </div>
                     </div>
-                </div>
                 </div>
             </a>`;
 }
