@@ -125,7 +125,7 @@ html {
   max-width: 420px;
   color: var(--space-cadet);
   font-size: var(--fs-2);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .section-text {
@@ -758,14 +758,14 @@ html {
 
 .testimonials { padding: var(--py) var(--px) 120px; }
 
-.testimonials .section-title { margin-bottom: 15px; }
+.testimonials .section-title { margin-bottom: 5px; }
 
 .testimonials .section-text { margin-bottom: 50px; }
 
 .testimonials-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 50px;
+  gap: 20px;
 }
 
 .testimonials-card .card-title {
@@ -825,7 +825,6 @@ html {
 \*-----------------------------------*/
 
 footer {
-  background: var(--space-cadet);
   padding: 50px var(--px);
 }
 
@@ -851,7 +850,6 @@ footer {
 
 .copyright {
   font-size: 12px;
-  color: var(--rhythm);
   text-align: center;
   letter-spacing: 0.5px;
 }

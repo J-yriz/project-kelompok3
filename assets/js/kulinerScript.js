@@ -43,10 +43,10 @@ function carousel() {
 carousel();
 
 // Ambil data.json
-var xhttp = new XMLHttpRequest();
+let xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-        var data = JSON.parse(xhttp.responseText);
+        let data = JSON.parse(xhttp.responseText);
         const productContainer = document.querySelector(".product-container");
         const aClassStyle = document.getElementsByClassName("kartuProduk");
         const button = document.getElementById("myButton");
@@ -128,34 +128,34 @@ xhttp.onreadystatechange = function () {
             });
         });
 
-        // Rating dropdown
-        const ratingDropdown = document.getElementById("rating");
+        // // Rating dropdown
+        // const ratingDropdown = document.getElementById("rating");
 
-        ratingDropdown.addEventListener("change", function () {
-            const selectedRating = parseInt(ratingDropdown.value, 10);
+        // ratingDropdown.addEventListener("change", function () {
+        //     const selectedRating = parseInt(ratingDropdown.value, 10);
 
-            if (isNaN(selectedRating)) {
-                for (let i = 0; i < aClassStyle.length; i++) {
-                    aClassStyle[i].style.display = "block";
-                }
-                displayShortMenu();
-                button.style.display = "block";
-            } else {
-                // Loop through all elements and hide/show based on the filter
-                for (let i = 0; i < aClassStyle.length; i++) {
-                    const product = data[i];
-                    const productRating = Math.floor(product.bintang);
+        //     if (isNaN(selectedRating)) {
+        //         for (let i = 0; i < aClassStyle.length; i++) {
+        //             aClassStyle[i].style.display = "block";
+        //         }
+        //         displayShortMenu();
+        //         button.style.display = "block";
+        //     } else {
+        //         // Loop through all elements and hide/show based on the filter
+        //         for (let i = 0; i < aClassStyle.length; i++) {
+        //             const product = data[i];
+        //             const productRating = Math.floor(product.bintang);
 
-                    if (productRating === selectedRating) {
-                        aClassStyle[i].style.display = "block";
-                    } else {
-                        aClassStyle[i].style.display = "none";
-                    }
-                }
+        //             if (productRating === selectedRating) {
+        //                 aClassStyle[i].style.display = "block";
+        //             } else {
+        //                 aClassStyle[i].style.display = "none";
+        //             }
+        //         }
 
-                button.style.display = "none";
-            }
-        });
+        //         button.style.display = "none";
+        //     }
+        // });
 
         // ModalDetail
         const kartuPro = document.querySelectorAll('.kartuProduk');
@@ -166,38 +166,111 @@ xhttp.onreadystatechange = function () {
                 const dataDetail = Number(elemen.getAttribute('data-detail'));
                 data.forEach((e) => {
                     if (e.id === dataDetail) {
+                        e.detail.menu1 = capitalizeEachWord(e.detail.menu1);
+                        e.detail.menu2 = capitalizeEachWord(e.detail.menu2);
+                        e.detail.menu3 = capitalizeEachWord(e.detail.menu3);
                         let modalDetailMakanan = `
                         <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                             <p class="text-xl font-semibold text-putihMiaw dark:text-putihMiaw flex items-center">
-                            <a style="margin-right: 5px;" href="${e.detail.linkWebsite}" target="_blank"">${e.namaProduk1} |</a>
-                            <span class="small">Rp.</span> ${e.harga.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                            <a style="margin-right: 5px;" href="${e.detail.goFood}" target="_blank"">${e.namaProduk1} |</a>
+                            <span class="small">Rp.</span> ${e.harga.includes(".") ? e.harga : e.harga.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                             </p>
                         </div>
                         <!-- Modal body -->
                         <div class="flex flex-col md:flex-row p-4 md:p-5 space-y-4 md:space-y-0 md:space-x-4 items-center">
-                            <img src="./assets/images/${e.gambar}" alt="product image" class="w-30 sm:w-2/5" loading="lazy" />
+                            <img src="./assets/images/menu/${e.gambar}" alt="product image" class="w-30 sm:w-2/5" loading="lazy" />
                             <div class="penjelasanMakanan text-base leading-relaxed text-gray-500 dark:text-gray-400">
                             <div class="keteranganMakanan border p-2 md:p3 md:rounded-md">
                                 <div class="kotakAsikSendiri border-b flex flex-col md:flex-row pb-2">
-                                <p class="mr-4"><span class="font-semibold text-putihMiaw">Rating Menu</span>${e.bintang}</p>
                                 <p><span class="font-semibold text-putihMiaw">Keterangan</span>${e.keterangan}</p>
                                 </div>
                                 <p class="border-b pb-2"><span class="font-semibold text-putihMiaw">Alamat</span>${e.detail.alamat}</p>
-                                <p><span class="font-semibold text-putihMiaw">Menu lainnya</span>- ${e.detail.menu1} | Rp.${e.detail.harga1.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}<br>- ${e.detail.menu2} | Rp.${e.detail.harga2.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}<br>- ${e.detail.menu3} | Rp.${e.detail.harga3.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</p>
+                                <p><span class="font-semibold text-putihMiaw">Menu lainnya</span>- ${e.detail.menu1} | Rp.${e.detail.harga1.includes(".") ? e.detail.harga1 : e.detail.harga1.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}<br>- ${e.detail.menu2} | Rp.${e.detail.harga2.includes(".") ? e.detail.harga2 : e.detail.harga2.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}<br>- ${e.detail.menu3} | Rp.${e.detail.harga3.includes(".") ? e.detail.harga3 : e.detail.harga3.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</p>
                             </div>
                             </div>
                         </div>`
-                        
+
                         modalContent.innerHTML = modalDetailMakanan;
                     }
                 })
             });
         });
 
+        // Tambah Ulasan
+        const tambahUlasanBtn = document.getElementById('tambahUlasan');
+        const modalMenu = document.querySelector('.menuMakanan');
+
+        tambahUlasanBtn.addEventListener('click', function () {
+            let options = '<option value="" selected disabled>Pilih Menu</option>';
+            data.forEach((e) => {
+                options += `<option value="${capitalizeEachWord(e.namaProduk1)}">${capitalizeEachWord(e.namaProduk1)}</option>`;
+            })
+            let modalMakanan = `<label for="menuMakanan"
+                                class="block mb-2 font-medium text-gray-900 dark:text-putihMiaw">Menu</label>
+                            <select id="menuMakanan" name="menuMakanan"
+                                class="bg-gray-50 border border-putihMiaw text-gray-900 text-sm rounded-lg focus:ring-biruMiaw focus:border-biruMiaw block w-full py-3 px-4 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-putihMiaw dark:focus:ring-hitamMiaw dark:focus:border-hitaring-hitamMiaw">
+                                ${options}
+                            </select>`
+            modalMenu.innerHTML = modalMakanan;
+        });
+
     }
 };
 xhttp.open("GET", "assets/json/data.json", true);
 xhttp.send();
+
+let secondxhttp = new XMLHttpRequest();
+secondxhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        let data = JSON.parse(secondxhttp.responseText);
+        const tempatUlasan = document.querySelector(".containerUlasan")
+        let dataUlasan = '';
+        data.forEach((e) => {
+            dataUlasan += isiUlasan(e)
+        })
+        tempatUlasan.innerHTML = dataUlasan;
+    }
+}
+secondxhttp.open("GET", "assets/json/dataKomentar.json", true);
+secondxhttp.send();
+
+function isiUlasan(e) {
+    let starIcons = Array.from(
+        { length: e.bintang },
+        () => '<ion-icon name="star"></ion-icon>'
+    ).join("");
+    let gtw = '';
+    if (e.bintang === 1) {
+        gtw += 'Sangat Buruk!'
+    } else if (e.bintang === 2) {
+        gtw += 'Buruk!'
+    } else if (e.bintang === 3) {
+        gtw += 'Cukup!'
+    } else if (e.bintang === 4) {
+        gtw += 'Bagus!'
+    } else {
+        gtw += 'Sangat Bagus!'
+    }
+    return `<div class="testimonials-card">
+                <h4 class="card-title">${e.namaMakanan} | ${gtw}</h4>
+
+                <div class="testimonials-rating">
+                    ${starIcons}
+                </div>
+
+                <p class="testimonials-text">${e.komentar}</p>
+
+                <div class="customer-info">
+                <div class="customer-img-box">
+                    <img src="./assets/images/profile.png" alt="customer image" class="customer-img" width="100"
+                    loading="lazy" />
+                </div>
+
+                <h5 class="customer-name">${e.nama}</h5>
+                </div>
+            </div>`
+}
+
 
 function isiHtmlCards(e, s) {
     let starIcons = Array.from(
@@ -208,7 +281,7 @@ function isiHtmlCards(e, s) {
                 <div class="product-card">
                     <div class="img-box">
                         <img
-                        src="./assets/images/${e.gambar}"
+                        src="./assets/images/menu/${e.gambar}"
                         alt="product image"
                         class="product-img"
                         width="200"

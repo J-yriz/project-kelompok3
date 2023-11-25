@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email_err = "Tolong masukan email.";
     } else {
         // Prepare a select statement
-        $sql = "SELECT email FROM users WHERE email = ?";
+        $sql = "SELECT email FROM user WHERE email = ?";
 
         if ($stmt = mysqli_prepare($link, $sql)) {
             // Bind variables to the prepared statement as parameters
@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(empty($email_err) && empty($password_err) && empty($repeat_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO users (email, password) VALUES (?, ?)";
+        $sql = "INSERT INTO user (email, password) VALUES (?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -121,24 +121,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="register max-w-md mx-auto mt-44 p-5 bg-slate-900 rounded-lg">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
-                        <label for="email" class="block mb-2 text-sm font-medium text-white dark:text-white">Your email</label>
-                        <input type="email" id="email" name="email" class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="example@gmail.com" required value="<?php echo $email; ?>">
+                        <label for="email" class="block mb-2 text-sm font-medium text-putihMiaw dark:text-putihMiaw">Your email</label>
+                        <input type="email" id="email" name="email" class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-putihMiaw dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="example@gmail.com" required value="<?php echo $email; ?>">
                         <span class="mt-1 help-block text-red-800"><?php echo $email_err; ?></span>
                     </div>    
                     <div class="mt-5 mb-6 form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                        <label for="password" class="block mb-2 text-sm font-medium text-white dark:text-white">Your Password</label>
-                        <input type="password" id="password" name="password" class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required value="<?php echo $password; ?>">
+                        <label for="password" class="block mb-2 text-sm font-medium text-putihMiaw dark:text-putihMiaw">Your Password</label>
+                        <input type="password" id="password" name="password" class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-putihMiaw dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required value="<?php echo $password; ?>">
                         <span class="mt-1 help-block text-red-800"><?php echo $password_err; ?></span>
                     </div>
                     <div class="mb-3 form-group <?php echo (!empty($repeat_err)) ? 'has-error' : ''; ?>">
-                        <label for="repeat-password" class="block mb-2 text-sm font-medium text-white dark:text-white">Repeat password</label>
-                        <input type="password" id="repeat-password" name="repeat" class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required value="<?php echo $repeat; ?>">
+                        <label for="repeat-password" class="block mb-2 text-sm font-medium text-putihMiaw dark:text-putihMiaw">Repeat password</label>
+                        <input type="password" id="repeat-password" name="repeat" class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-putihMiaw dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required value="<?php echo $repeat; ?>">
                         <span class="mt-1 help-block text-red-800"><?php echo $repeat_err; ?></span>
                     </div>
                     <div class="flex items-start mb-6">
-                        <label for="terms" class="text-sm font-medium text-white dark:text-white">Sudah punya akun? <a href="./index.php" class="text-biruMiaw hover:underline dark:text-biruMiaw">Login</a></label>
+                        <label for="terms" class="text-sm font-medium text-putihMiaw dark:text-putihMiaw">Sudah punya akun? <a href="./index.php" class="text-biruMiaw hover:underline dark:text-biruMiaw">Login</a></label>
                     </div>
-                    <button type="submit" value="Submit" class="text-black bg-blue-700 hover:bg-blue-800 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-biruMiaw dark:hover:bg-blue-300">Register new account</button>
+                    <button type="submit" value="Submit" class="text-hitamMiaw bg-blue-700 hover:bg-blue-800 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-biruMiaw dark:hover:bg-blue-300">Register akun baru</button>
                 </form>
             </div>
         </main>

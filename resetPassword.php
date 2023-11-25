@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Cek kesalahan input sebelum memperbarui database
     if (empty($email_err) && empty($new_password_err) && empty($confirm_password_err)) {
-        $sql = "UPDATE users SET password = ? WHERE email = ?";
+        $sql = "UPDATE user SET password = ? WHERE email = ?";
         
         if ($stmt = mysqli_prepare($link, $sql)) {
             mysqli_stmt_bind_param($stmt, "ss", $param_password, $param_email);
@@ -74,23 +74,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="resetPassword max-w-md mx-auto mt-52 p-5 bg-slate-900 rounded-lg">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
                     <div class="mb-6 form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
-                        <label for="email" class="block mb-2 text-sm font-medium text-white dark:text-white">Your email</label>
-                        <input type="email" id="email" name="email" class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required value="<?php echo $email; ?>">
+                        <label for="email" class="block mb-2 text-sm font-medium text-putihMiaw dark:text-putihMiaw">Your email</label>
+                        <input type="email" id="email" name="email" class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-putihMiaw dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required value="<?php echo $email; ?>">
                         <span class="mt-1 help-block text-red-800"><?php echo $email_err; ?></span>
                     </div> 
                     <div class="mb-6 form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
-                        <label for="password" class="block mb-2 text-sm font-medium text-white dark:text-white">New Password</label>
-                        <input type="password" id="new_password" name="new_password" class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required value="<?php echo $new_password; ?>">
+                        <label for="password" class="block mb-2 text-sm font-medium text-putihMiaw dark:text-putihMiaw">New Password</label>
+                        <input type="password" id="new_password" name="new_password" class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-putihMiaw dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required value="<?php echo $new_password; ?>">
                         <span class="mt-1 help-block text-red-800"><?php echo $new_password_err; ?></span>
                     </div>
                     <div class="mb-6 form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                        <label for="password" class="block mb-2 text-sm font-medium text-white dark:text-white">Confirm Password</label>
-                        <input type="password" id="confirm_password" name="confirm_password" class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
+                        <label for="password" class="block mb-2 text-sm font-medium text-putihMiaw dark:text-putihMiaw">Confirm Password</label>
+                        <input type="password" id="confirm_password" name="confirm_password" class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-putihMiaw dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
                         <span class="mt-1 help-block text-red-800"><?php echo $confirm_password_err; ?></span>
                     </div>
                     <div class="flex items-start">    
-                        <button type="submit" value="Submit" class="text-black bg-blue-700 hover:bg-blue-800 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-biruMiaw dark:hover:bg-blue-300">Konfirmasi</button>
-                        <a href="./index.php" class="ml-3 text-black bg-blue-700 hover:bg-blue-800 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-biruMiaw dark:hover:bg-blue-300">Batal</a>
+                        <button type="submit" value="Submit" class="text-hitamMiaw bg-blue-700 hover:bg-blue-800 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-biruMiaw dark:hover:bg-blue-300">Konfirmasi</button>
+                        <a href="./index.php" class="ml-3 text-hitamMiaw bg-blue-700 hover:bg-blue-800 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-biruMiaw dark:hover:bg-blue-300">Batal</a>
                     </div>
                 </form>
             </div>

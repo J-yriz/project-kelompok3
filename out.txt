@@ -1,51 +1,24 @@
-                            <div class="flex items-center">
-                                <div class="w-full">
-                                    <label for="hargaMenu" class="block mb-2 text-sm font-medium text-putihMiaw">Harga Menu Utama</label>
-                                    <input type="text" id="hargaMenu" name="hargaMenu" class="bg-gray-600 text-putihMiaw text-sm rounded-lg focus:ring-gray-600 focus:border-gray-600 block w-full pl-2.5" required>
-                                </div>
-                                <select id="rating" class="bg-gray-600 border border-blue-300 text-putihMiaw text-sm rounded-lg block p-2 ml-4 mt-7 focus:ring-gray-600 focus:border-gray-600">
-                                    <option selected>Select food Rating</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-
-
-                            <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'] ?? '';
-    $email = $_POST['email'] ?? '';
-
-    $data = [
-        'name' => $name,
-        'email' => $email,
-    ];
-
-    $json = json_encode($data);
-
-    // Simpan ke file JSON
-    $file = '../assets/json/test.json';
-    file_put_contents($file, $json);
-
-    echo "Data telah disimpan ke dalam file JSON.";
-}
-?>
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Form Input</title>
-</head>
-<body>
-  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-    <label for="name">Nama:</label><br>
-    <input type="text" id="name" name="name"><br>
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email"><br><br>
-    <input type="submit" value="Submit">
-  </form>
-</body>
-</html>
+        <form>
+          <label for="default-search"
+            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-putihMiaw">Search</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+              </svg>
+            </div>
+            <input type="search" id="default-search"
+              class="mb-2 block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-biruMiaw focus:border-biruMiaw dark:bg-gray-200 dark:border-gray-100 dark:placeholder-gray-400 dark:text-hitamMiaw dark:focus:ring-biruMiaw dark:focus:border-biruMiaw"
+              placeholder="Cari beberapa menu kuliner.....">
+            <button type="submit"
+              class="text-hitamMiaw absolute right-2.5 bottom-2.5 bg-biruMiaw hover:bg-blue-300 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-biruMiaw">Search</button>
+          </div>
+          <div class="flex justify-center items-center sm:flex-row sm:justify-end sm:items-end">
+            <a href="./tambahDataMenu.html"
+              class="ml-3 block text-hitamMiaw bg-biruMiaw hover:bg-blue-300 focus:ring-biruMiaw focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-biruMiaw dark:hover-bg-blue-300">
+              Tambah Menu
+            </a>
+          </div>
+        </form>
