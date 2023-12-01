@@ -1,25 +1,5 @@
 [
     {
-        "id": 174946,
-        "gambar": "menu1.jpeg",
-        "namaProduk": "nasi goreng",
-        "namaProduk1": "nasi goreng",
-        "keterangan": "nasi goreng ini enak",
-        "harga": "14000",
-        "detail": {
-            "alamat": "jalan wiroto 6 nomor 2",
-            "telepon": "02117778297",
-            "linkWebsite": "https:\/\/warungnasigoreng.com\/",
-            "goFood": "",
-            "menu1": "nasi goreng",
-            "menu2": "esteh",
-            "menu3": "mie goreng",
-            "harga1": "14000",
-            "harga2": "3000",
-            "harga3": "15000"
-        }
-    },
-    {
         "id": 597777,
         "gambar": "menu2.png",
         "namaProduk": "Nasi Pindang Kudus & Soto Sapi Gajahmada - Semarang",
@@ -277,6 +257,27 @@
             "harga1": "60.000",
             "harga2": "37.500",
             "harga3": "46.250"
+        }
+    },
+    {
+        "id": 292513,
+        "gambar": "menu16.png",
+        "namaProduk": "Bakso",
+        "namaProduk1": "Bakso",
+        "keterangan": "Bakso dengan kaldu yang kental",
+        "harga": "15000",
+        "bintang": 0,
+        "detail": {
+            "alamat": "Jl. Tanjung No.18A, Pandansari, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50132",
+            "telepon": "081914483058",
+            "linkWebsite": "https:\/\/tokobenomantab.com\/",
+            "goFood": "https:\/\/gofood.co.id\/semarang\/restaurant\/-soto-ayam-bangkong--827f1b63-6a6b-4e44-9c8d-6a8b034c3846",
+            "menu1": "Bakso Malang",
+            "menu2": "Mie Ayam",
+            "menu3": "Bakso Malang Beranak",
+            "harga1": "20000",
+            "harga2": "15000",
+            "harga3": "25000"
         }
     }
 ]

@@ -11,6 +11,7 @@ tailwind.config = {
                 'biruMiaw' : '#91C8E4',
                 'biruMiaw1' : '#749BC2',
                 'biruMiaw2' : '#4682A9',
+                'biruModal' : '#a1bad4',
                 'putihMiaw': '#F6F4EB',
                 'hitamMiaw': '#241f42'
             }

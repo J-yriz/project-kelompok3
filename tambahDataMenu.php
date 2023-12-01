@@ -145,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Menyimpan data ke dalam file JSON
     file_put_contents($file, $newJsonData);
-    echo "<script>window.location.href = './kulinerSemarang.php';</script>";
+    echo "<script>window.location.href = './kulinerSemarang.php?rand=" . rand() . "';</script>";
 }
 
 function generateRandomID()
@@ -284,7 +284,7 @@ function generateRandomID()
                                 </div>
                             </div>
                             <div class="flex justify-center items-center sm:flex-row sm:justify-end sm:items-end">
-                                <a href="./kulinerSemarang.html"
+                                <a href="./kulinerSemarang.php"
                                     class="mr-2 text-black bg-biruMiaw hover:bg-blue-300 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center">Kembali</a>
                                 <button type="submit" value="InputData"
                                     class="ml-2 text-black bg-biruMiaw hover:bg-blue-300 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center">Tambah

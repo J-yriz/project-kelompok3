@@ -1,60 +1,73 @@
 <?php
 session_start();
+require_once "./config.php";
 
-// Periksa apakah pengguna sudah login
 if (!isset($_SESSION['loggedin'])) {
-  // Jika belum login, redirect ke halaman login
   header("Location: ./index.php");
   exit();
 }
 
+$nama = $_SESSION['username'];
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $nama = $_POST['namaUlasan'];
   $menuMakanan = $_POST['menuMakanan'];
   $rating = intval($_POST['ratingUlasan']);
   $description = $_POST['descriptionUlasan'];
 
-  // Mengambil ID dari Data Menu
+
+
   $dataJSON = file_get_contents('./assets/json/data.json');
   $dataArray = json_decode($dataJSON, true);
   $id = getIdByProductName($dataArray, $menuMakanan);
 
-  $data = array(
+  $data = [
     'bintang' => $rating,
     'komentar' => $description,
     'nama' => $nama,
     'namaMakanan' => $menuMakanan,
     'id' => $id
-  );
+  ];
 
-  // Menambahkan Data Komentar menjadi JSON
   $file = './assets/json/dataKomentar.json';
   $currentData = file_get_contents($file);
-  $currentDataArray = json_decode($currentData, true);
+  $currentDataArray = json_decode($currentData, true) ?: [];
   $currentDataArray[] = $data;
   $newJsonData = json_encode($currentDataArray, JSON_PRETTY_PRINT);
   file_put_contents($file, $newJsonData);
-  echo "<script>window.location.href = './kulinerSemarang.php';</script>";
+  echo "<script>window.location.href = './kulinerSemarang.php?rand=" . rand() . "';</script>";
 }
 
-// Ambil data 'id' berdasarkan 'namaProduk'
+// Logout handling
+if (isset($_GET['logout']) && $_GET['logout'] === 'true') {
+  // Unset all of the session variables
+  $_SESSION = array();
+
+  // Destroy the session
+  session_destroy();
+
+  // Redirect to the index page
+  header("Location: ./index.php");
+  exit();
+}
+
+// Close connection
+mysqli_close($link);
+
 function getIdByProductName($dataArray, $productName)
 {
   $productName = strtolower($productName);
   foreach ($dataArray as $item) {
-    $itemProductName = strtolower($item['namaProduk']);
-    if ($itemProductName === $productName) {
+    if (strtolower($item['namaProduk']) === $productName) {
       return $item['id'];
     }
   }
   return null;
 }
 
-
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 
 <head>
   <meta charset="UTF-8" />
@@ -97,27 +110,38 @@ function getIdByProductName($dataArray, $productName)
             <img src="./assets/images/KulinerSemarang.png" alt="logo" width="150" />
           </a>
 
-          <ul class="navbar-nav">
-            <li>
+          <ul class="navbar-nav flex list-none ml-auto">
+            <li class="mx-4">
               <a href="#home" class="nav-link">Home</a>
             </li>
-
-            <li>
+            <li class="mx-4">
               <a href="#about" class="nav-link">Tentang</a>
               <!-- Tentang -->
             </li>
-
-            <li>
+            <li class="mx-4">
               <a href="#menu" class="nav-link">Menu Kuliner</a>
               <!-- Menu -->
             </li>
-
-            <li>
+            <li class="mx-4">
               <a href="#testimonials" class="nav-link">Ulasan</a>
               <!-- UlasanTestimonials -->
             </li>
-          </ul>
+            <li class="mx-0 md:ml-48">
+              <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
+                class="btn-dropdown flex items-center justify-between bg-biruMiaw hover:bg-blue-300 focus:ring-1 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-4 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
 
+                <div class="flex items-center">
+                  <span class="mr-2">Pengaturan</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+              </button>
+            </li>
+          </ul>
           <div class="navbar-btn-group">
             <button class="menu-toggle-btn">
               <span class="line one"></span>
@@ -141,6 +165,23 @@ function getIdByProductName($dataArray, $productName)
 
               <h5 class="product-name">Sea bream carpaccio</h5>
               <p class="product-price"><span class="small">$</span>19</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div id="dropdown"
+        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+          <li>
+            <a href="./kulinerSemarang.php?logout=true"
+              class="block flex items-center justify-between px-4 py-2 hover:bg-red-100 dark:hover:bg-red-600 dark:hover:text-red-500">
+              <span class="text-red-500">Log Out</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6 text-red-500">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+              </svg>
             </a>
           </li>
         </ul>
@@ -327,25 +368,28 @@ function getIdByProductName($dataArray, $productName)
       -->
 
       <section class="testimonials" id="testimonials">
-        <div class="flex justify-between items-center border-b-4 rounded-lg mb-7">
-          <h2 class="section-title">Ulasan</h2>
-          <div class="flex justify-center items-center sm:flex-row sm:justify-end sm:items-end">
-            <select id="ratingUlasan"
-              class="bg-gray-50 border border-putihMiaw text-hitamMiaw text-sm rounded-lg block p-2.5 focus:ring-biruMiaw focus:border-biruMiaw dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-400 dark:text-hitamMiaw">
-              <option selected>Select food Rating</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-            <button data-modal-target="crud-modal" data-modal-toggle="crud-modal"
-              class="ml-5 block text-hitamMiaw bg-biruMiaw hover:bg-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-biruMiaw dark:hover:bg-blue-300"
-              type="button" id="tambahUlasan">
-              Tambah Ulasan
-            </button>
+        <div class="border-b-4 rounded-lg mb-7">
+          <div class="flex flex-col sm:flex-row justify-between items-center">
+            <h2 class="section-title sm:mb-0">Ulasan</h2>
+            <div class="flex items-center">
+              <select id="ratingUlasan"
+                class="bg-gray-50 border border-putihMiaw text-hitamMiaw text-sm rounded-lg block p-2.5 focus:ring-biruMiaw focus:border-biruMiaw dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-400 dark:text-hitamMiaw mb-3 sm:mb-0">
+                <option selected>Select food Rating</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <button data-modal-target="crud-modal" data-modal-toggle="crud-modal"
+                class="ml-5 mb-3 md:my-3 block text-hitamMiaw bg-biruMiaw hover:bg-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-biruMiaw dark:hover:bg-blue-300"
+                type="button" id="tambahUlasan">
+                Tambah Ulasan
+              </button>
+            </div>
           </div>
         </div>
+
 
         <div class="testimonials-grid containerUlasan"></div>
       </section>
@@ -376,13 +420,6 @@ function getIdByProductName($dataArray, $productName)
             <!-- Modal body -->
             <form class="p-4 md:p-5 modalUlasan" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
               <div class="grid gap-4 mb-4 grid-cols-2">
-                <div class="col-span-2">
-                  <label for="namaUlasan"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-putihMiaw">Nama</label>
-                  <input type="text" name="namaUlasan" id="namaUlasan"
-                    class="bg-gray-50 border border-putihMiaw text-gray-900 text-sm rounded-lg focus:ring-biruMiaw focus:border-biruMiaw block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-putihMiaw dark:focus:ring-hitamMiaw dark:focus:border-hitamring-hitamMiaw"
-                    placeholder="Rimuru Tempest" required="" />
-                </div>
                 <div class="col-span-2">
                   <div class="menuMakanan">
                   </div>

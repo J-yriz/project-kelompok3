@@ -12,17 +12,17 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 require_once "config.php";
 
 // Define variables and initialize with empty values
-$email = $password = "";
-$email_err = $password_err = "";
+$username = $password = "";
+$username_err = $password_err = "";
 
 // Processing form data when the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Check if email is empty
-    if (empty(trim($_POST["email"]))) {
-        $email_err = "Masukan email!";
+    // Check if username is empty
+    if (empty(trim($_POST["username"]))) {
+        $username_err = "Masukan username!";
     } else {
-        $email = trim($_POST["email"]);
+        $username = trim($_POST["username"]);
     }
 
     // Check if the password is empty
@@ -33,26 +33,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Validate credentials
-    if (empty($email_err) && empty($password_err)) {
+    if (empty($username_err) && empty($password_err)) {
         // Prepare a select statement
-        $sql = "SELECT email, password FROM user WHERE email = ?";
+        $sql = "SELECT username, password FROM pengguna WHERE username = ?";
 
         if ($stmt = mysqli_prepare($link, $sql)) {
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $param_email);
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
 
             // Set parameters
-            $param_email = $email;
+            $param_username = $username;
 
             // Attempt to execute the prepared statement
             if (mysqli_stmt_execute($stmt)) {
                 // Store result
                 mysqli_stmt_store_result($stmt);
 
-                // Check if email exists, if yes then verify the password
+                // Check if username exists, if yes then verify the password
                 if (mysqli_stmt_num_rows($stmt) == 1) {
                     // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $fetched_email, $hashed_password);
+                    mysqli_stmt_bind_result($stmt, $fetched_username, $hashed_password);
                     if (mysqli_stmt_fetch($stmt)) {
                         if (password_verify($password, $hashed_password)) {
                             // Password is correct, so start a new session
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
-                            $_SESSION["email"] = $fetched_email;
+                            $_SESSION["username"] = $fetched_username;
 
                             // Redirect user to the welcome page
                             header("location: ./kulinerSemarang.php");
@@ -70,8 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         }
                     }
                 } else {
-                    // Display an error message if the email doesn't exist
-                    $email_err = "Email tidak tedaftar.";
+                    // Display an error message if the username doesn't exist
+                    $username_err = "username tidak tedaftar.";
                 }
             } else {
                 echo "Terjadi kesalahan!, Silahkan coba lagi.";
@@ -106,10 +106,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <main>
             <div class="login max-w-md mx-auto mt-52 p-5 bg-slate-900 rounded-lg">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                    <div class="mb-6 form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
-                        <label for="email" class="block mb-2 text-sm font-medium text-putihMiaw dark:text-white">Your email</label>
-                        <input type="email" id="email" name="email" class="form-control shadow-sm bg-gray-50 border border-gray-300 text-hitamMiaw text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="example@gmail.com" required value="<?php echo $email; ?>">
-                        <span class="mt-1 help-block text-red-800"><?php echo $email_err; ?></span>
+                    <div class="mb-6 form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                        <label for="username" class="block mb-2 text-sm font-medium text-putihMiaw dark:text-white">Username</label>
+                        <input type="text" id="username" name="username" class="form-control shadow-sm bg-gray-50 border border-gray-300 text-hitamMiaw text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required value="<?php echo $username; ?>">
+                        <span class="mt-1 help-block text-red-800"><?php echo $username_err; ?></span>
                     </div>    
                     <div class="mb-3 form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                         <label for="password" class="block mb-2 text-sm font-medium text-putihMiaw dark:text-white">Your password</label>

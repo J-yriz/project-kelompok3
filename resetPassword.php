@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Cek kesalahan input sebelum memperbarui database
     if (empty($email_err) && empty($new_password_err) && empty($confirm_password_err)) {
-        $sql = "UPDATE user SET password = ? WHERE email = ?";
+        $sql = "UPDATE pengguna SET password = ? WHERE email = ?";
         
         if ($stmt = mysqli_prepare($link, $sql)) {
             mysqli_stmt_bind_param($stmt, "ss", $param_password, $param_email);
@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
                     <div class="mb-6 form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
                         <label for="email" class="block mb-2 text-sm font-medium text-putihMiaw dark:text-putihMiaw">Your email</label>
-                        <input type="email" id="email" name="email" class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-putihMiaw dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required value="<?php echo $email; ?>">
+                        <input type="text" id="email" name="email" class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-putihMiaw dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required value="<?php echo $email; ?>">
                         <span class="mt-1 help-block text-red-800"><?php echo $email_err; ?></span>
                     </div> 
                     <div class="mb-6 form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
